@@ -27,6 +27,9 @@
         <!-- Extract Files !-->
         <unzip src="GeoLite2.zip" dest="GeoLite2" />
 
+        <!-- Drop Zip File !-->
+        <delete file="GeoLite2.zip" />
+
 		<!-- Generate Country Lists !-->
         <echo message="Generating Country-IP Lists.."></echo>
 		<exec executable="php">
