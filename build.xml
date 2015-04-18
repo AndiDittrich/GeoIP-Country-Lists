@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Generate Country-IP-Lists form Maxminds GeoLite2 Database
+	@see		https://github.com/AndiDittrich/EnlighterJS/blob/master/build.xml
+	@author		Andi Dittrich <andi.dittrich@a3non.org>
+	@version	1.0
+!-->
+<project name="GeoIP-Lists" default="build" basedir=".">
+		
+	<!-- Target Properties ! -->
+	<property name="build.dir" value="Build/" />
+    <property name="data.url" value="http://geolite.maxmind.com/download/geoip/database/GeoLite2-Country-CSV.zip" />
+
+	<!-- Build -->
+	<target name="build">
+		<!-- Cleanup Build Dir -->
+        <echo message="Cleanup.."></echo>
+		<delete dir="${build.dir}" />
+
+		<!-- Create Dir structure !-->
+		<mkdir dir="${build.dir}"/>
+
+        <!-- Download current Database !-->
+        <get src="${data.url}" dest="GeoLite2.zip"></get>
+
+        <!-- Extract Files !-->
+        <unzip src="GeoLite2.zip" dest="GeoLite2" />
+
+		<!-- Generate Country Lists !-->
+        <echo message="Generating Country-IP Lists.."></echo>
+		<exec executable="php">
+			<arg value="convert.php" />
+		</exec>
+	</target>
+</project>

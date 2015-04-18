@@ -1,0 +1,6 @@
+ZendFramework*
+node_modules*
+.settings*
+.project
+.idea*
+.tmp*
