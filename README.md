@@ -1,6 +1,6 @@
 # GeoIP Country Lists #
 Per Country IP lists useful for bash scripting/filter purpose.
-> This product includes GeoLite2 data created by MaxMind, available from [http://www.maxmind.com(http://www.maxmind.com).
+> This product includes GeoLite2 data created by MaxMind, available from [http://www.maxmind.com](http://www.maxmind.com).
 
 ## Data-Structure ##
 The `Build/` directory contains the per-country ip lists. One CIDR Range per line, separated by \\n.
@@ -26,7 +26,7 @@ xxx.xxx.xxx.xxx/yy\n
 ## Update ##
 To update the dataset, just run the following command within a shell (PHP and ANT required!). THe script will automatically fetch the current GeoLite2 Database and transform the data in per-country lists.
 
-```shell
+```bash
 ant build.xml
 ```
 
